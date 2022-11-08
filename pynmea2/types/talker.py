@@ -1123,27 +1123,27 @@ class ALK(TalkerSentence, SeaTalk):
     )
 
 
-class VLH(TalkerSentence, LatLonFix):
+class VLH(TalkerSentence):
     fields = (("Distance", "distance", float),)
 
 
-class EMI(TalkerSentence, ValidGGAFix, LatLonFix):
+class EMI(TalkerSentence):
     fields = (("Emission mode", "emission_mode"),)
 
 
-class QUA(TalkerSentence, LatLonFix):
+class QUA(TalkerSentence):
     fields = (("Quality of measurement", "qual_measurement"),)
 
 
-class VEL(TalkerSentence, LatLonFix):
+class VEL(TalkerSentence):
     fields = (("Velocity", "velocity", float),)
 
 
-class DBK(TalkerSentence, LatLonFix):
+class DBK(TalkerSentence):
     fields = (("Depth below keel", "depth_below_keel"),)
 
 
-class NAV(TalkerSentence, ValidGGAFix, LatLonFix):
+class NAV(TalkerSentence, LatLonFix):
     fields = (
         ("Timestamp", "timestamp", timestamp),
         ("Latitude", "lat"),
@@ -1151,14 +1151,13 @@ class NAV(TalkerSentence, ValidGGAFix, LatLonFix):
     )
 
 
-class IFM(TalkerSentence, ValidGGAFix, LatLonFix):
+class IFM(TalkerSentence):
     fields = (
         ("OCGYR: pitch", "pitch", float),
         ("OCGYR: roll", "roll", float),
         ("OCGYR: heading", "heading", float),
         ("TRFUN: Winch length starboard", "winch_len_sb", float),
         ("TRFUN: Winch length port", "winch_len_pb", float),
-        ("Winch tensions starboard", "winch_ten_sb", float),
-        ("Winch tensions port", "winch_ten_pb", float),
+        ("TRFUN: Winch tensions starboard", "winch_ten_sb", float),
+        ("TRFUN: Winch tensions port", "winch_ten_pb", float),
     )
-
